@@ -1,0 +1,42 @@
+vps-ibr/
+├── LICENSE                  # license file
+├── README.md                # Project documentation
+├── .gitignore               # Git ignore file for Python, config files, etc.
+├── pyproject.toml           # Modern Python project configuration
+├── requirements.txt         # Python dependencies
+├── setup.py                 # Package installation script
+├── examples/                # Example files
+│   ├── config_examples/     # Example configurations
+│   │   ├── servers_config.yaml
+│   │   └── services_config.yaml
+│   └── outputs/             # Example outputs
+│       └── sample_inventory_output/
+├── vps_ibr/                 # Main package directory
+│   ├── __init__.py          # Package initialization
+│   ├── cli.py               # Command-line interface
+│   ├── config.py            # Configuration handling
+│   ├── inventory/           # Inventory module
+│   │   ├── __init__.py
+│   │   ├── collector.py     # Data collection functionality
+│   │   └── parser.py        # Command history parser
+│   ├── backup/              # Backup module
+│   │   ├── __init__.py
+│   │   └── manager.py       # Backup functionality
+│   ├── restore/             # Restore module
+│   │   ├── __init__.py
+│   │   └── manager.py       # Restore functionality
+│   ├── utils/               # Utility functions
+│   │   ├── __init__.py
+│   │   ├── ssh.py           # SSH utility functions
+│   │   └── file_utils.py    # File handling utilities
+│   └── scripts/             # Bash scripts used by the program
+│       ├── get_users.sh
+│       ├── get_history.sh
+│       └── detect_services.sh
+└── tests/                   # Unit and integration tests
+    ├── __init__.py
+    ├── conftest.py          # Test configuration and fixtures
+    ├── test_inventory.py
+    ├── test_backup.py
+    ├── test_restore.py
+    └── test_utils.py

@@ -26,6 +26,36 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+
+# ignore all ibr-* directories containing vps sensitive data
+ibr-*/ 
+# Other project specific files
+*.yaml
+!examples/config_examples/*.yaml
+myconfig.yaml
+my_servers.yaml
+*_private*
+
+# Backup files
+*.bak
+*.tmp
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.

@@ -1,0 +1,27 @@
+---
+# Example VPS Inventory Configuration File
+# Replace with your actual server details when using
+
+servers:
+  - ip: "192.0.2.10"  # Example IP (from RFC 5737 reserved range)
+    description: "Primary web server - Example Provider A"
+    ssh_key: "id_rsa_example"
+    
+  - ip: "192.0.2.20"
+    description: "Database server - Example Provider B"
+    ssh_key: "id_rsa_example2"
+    
+  - ip: "203.0.113.30" # Another example IP from reserved range
+    description: "Staging environment - Example Provider A"
+    # If ssh_key is not specified, the default ssh key will be used
+    
+  - ip: "198.51.100.40" # Another example IP from reserved range
+    description: "Load balancer - Example Provider B"
+    ssh_key: "id_rsa_example2"
+
+# Global configuration options
+global:
+  default_ssh_key: "id_rsa"  # Default SSH key if none specified for a server
+  ssh_key_path: "~/.ssh"     # Path where SSH keys are stored
+  timeout: 30                # SSH connection timeout in seconds
+  backup_root: "~/vps-backups"  # Root directory for storing backups

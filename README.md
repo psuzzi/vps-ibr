@@ -7,29 +7,7 @@ A comprehensive tool for managing virtual private servers - inventory tracking, 
 - **Inventory Collection**: Automatically collect information about users, installed services, and configurations
 - **Smart Backup**: Create targeted backups based on detected services and data
 - **Automated Restore**: Quickly restore a server from backups with minimal manual intervention
-- **Multi-Provider Support**: Works with DigitalOcean, IONOS, and other VPS providers
-
-## Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/psuzzi/vps-ibr.git
-cd vps-ibr
-
-# Install the package
-pip install -e .
-```
-
-### Note for Users: 
-- The installation step with `pip install -e` registers the command-line entry point `vpr-ibs` in your environment, making it available from anywhere. 
-
-### Note for Developers:
-- The installation process uses the `setup.py` and `pyproject.toml` files to register the entry point defined in the project configuration: `vps-ibr = "vps_ibr.cli:main"`.
-- If you want to run it directly during development, you can execute the cli module directly:
-    ```bash
-    # From vps-ibr/
-    python -m vps_ibr.cli inventory --config myconfig.yaml
-    ```
+- **Multi-Provider Support**: Works with any VPS offering SSH key-based authentication
 
 ## Requirements
 
@@ -37,7 +15,47 @@ pip install -e .
 - SSH access to target VPS instances (root or sudo privileges)
 - SSH key-based authentication configured
 
-## Quick Start
+## Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/psuzzi/vps-ibr.git
+cd vps-ibr
+```
+
+## Installation
+
+Installing with `pip install -e .` registers the command `vps-ibr` in your Python environment based on configurations in `setup.py` and `pyproject.toml`. This command points to the function `vps_ibr.cli:main`. The `-e` flag enables development mode, so any changes to the source code are immediately reflected when running the command.
+
+```bash
+# Install the package
+pip install -e .
+```
+
+## Development 
+
+The `quickstart.py` script creates a sample configuration file, sets up an isolated `venv` environment using dependencies from `pyproject.toml`, activates it, and runs `pip install -e .` (in the isolated environment). This is the preferred approach for development, dependency management, and iterative testing.
+
+```bash
+# Set up dev environment and install
+python quickstart.py
+
+# Later, activate the venv via command line or in your IDE
+```
+
+### Note:
+
+- Installing with `pip install -e` registers the command-line tool in development mode, so code changes are immediately reflected when running the program with the `vps-ibr` command.
+- If needed in development, you can also run the module directly:
+
+```bash
+# From vps-ibr/
+python -m vps_ibr.cli inventory --config myconfig.yaml
+```
+
+
+
+## Usage
 
 1. Create a configuration file based on the example:
 

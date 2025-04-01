@@ -1,6 +1,6 @@
 # VPS Inventory, Backup & Restore (VPS-IBR)
 
-A comprehensive tool for managing virtual private servers - inventory tracking, backup creation, and automated restoration.
+A tool for managing virtual private servers - inventory tracking, backup creation, and automated restoration.
 
 ## Features
 
@@ -97,7 +97,7 @@ global:
   timeout: 30
 ```
 
-## Usage
+## Usage Examples
 
 ### Collecting Inventory
 
